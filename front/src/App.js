@@ -7,8 +7,55 @@ import InstructorPage from './components/InstructorPage'
 import InstructorForm from './components/InstructorForm'
 import ClientPage from './components/ClientPage'
 import Signup from './components/Signup'
+import axios from 'axios';
+import React, { useState, useEffect } from "react";
+
+
+const initialFormValues = {
+  name: '',
+  type: '',
+  time: '',
+  day: '',
+  duration: '',
+  intensity: '',
+  location: '',
+  max_capacity: '',
+  punch_pass: false,
+}
+
+const initialFormErrors = {
+  name: '',
+  type: '',
+  time: '',
+  day: '',
+  duration: '',
+  intensity: '',
+  location: '',
+  max_capacity: '',
+}
+
+const initialClasses = []
+const initialDisabled = true
+
 
 function App() {
+  const [classes, setClasses] = useState(initialClasses)
+  const [formValues, setFormValues] = useState(initialFormValues)
+  const [formErrors, setFormErrors] = useState(initialFormErrors)
+  const [disabled, setDisabled] = useState(initialDisabled)
+
+  const postNewClass = newClass => {
+    axios.post('https://reqres.in/api/orders', newClass)
+      .then(res => {
+        console.log(res);
+        setClasses([res.data, ...classes])
+        setFormValues(initialFormValues);
+      }).catch(err => {
+        console.error(err);
+        setFormValues(initialFormValues);
+      })
+  }
+
   return (
     <div className="App">
       <Router>
