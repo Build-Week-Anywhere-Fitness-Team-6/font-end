@@ -35,12 +35,13 @@ function InstructorForm(props) {
                         value={values.type}
                         onChange={onChange}
                         name='type'
-                    />
+                    >
                     <option value=''>- Select a Class Type -</option>
                     <option value='yoga'>Yoga</option>
                     <option value='spin'>Spin</option>    
                     <option value='pilates'>Pilates</option>
                     <option value='kickboxing'>KickBoxing</option> 
+                    </select>   
                 </label>
             </div>
             <div>
@@ -50,14 +51,15 @@ function InstructorForm(props) {
                         value={values.day}
                         onChange={onChange}
                         name='day'
-                    />
-                    <option value=''>- Select a Class Type -</option>
+                    >
+                    <option value=''>- What day is the class? -</option>
                     <option value='monday'>Monday</option>
                     <option value='tuesday'>Tuesday</option>    
                     <option value='wednesday'>Wednesday</option>
                     <option value='thursday'>Thursday</option> 
                     <option value='friday'>Friday</option>
                     <option value='saturday'>Saturday</option> 
+                    </select>   
                 </label>
             </div>
            <div>
@@ -77,11 +79,12 @@ function InstructorForm(props) {
                         value={values.duration}
                         onChange={onChange}
                         name='duration'
-                    />
+                    >
                     <option value=''>- Select an Option -</option>
                     <option value='30-min'>30 min</option>
                     <option value='60-min'>60 min</option>
-                    <option value='90-min'>90 min</option>     
+                    <option value='90-min'>90 min</option>  
+                    </select>      
                 </label>
             </div>
            <div>
@@ -91,11 +94,12 @@ function InstructorForm(props) {
                         value={values.intensity}
                         onChange={onChange}
                         name='intensity'
-                    />
+                    >
                     <option value=''>- Select an Intensity -</option>
                     <option value='beginner'>Beginner</option>
                     <option value='intermediate'>Intermediate</option>
-                    <option value='advanced'>Advanced</option>   
+                    <option value='advanced'>Advanced</option> 
+                    </select>     
                 </label>
            </div>
            <div>
@@ -104,12 +108,13 @@ function InstructorForm(props) {
                         value={values.location}
                         onChange={onChange}
                         name='location'
-                    />
+                    >
                     <option value=''>- Select a room -</option>
                     <option value='gym-1'>Gym 1</option>
                     <option value='gym-2'>Gym 2</option>
                     <option value='studio-1'>Studio 1</option>
-                    <option value='studio-2'>Studio 2</option>     
+                    <option value='studio-2'>Studio 2</option> 
+                    </select>    
                 </label>
            </div>
             <div>

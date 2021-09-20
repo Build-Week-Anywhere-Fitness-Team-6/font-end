@@ -9,6 +9,8 @@ import ClientPage from './components/ClientPage'
 import Signup from './components/Signup'
 import axios from 'axios';
 import React, { useState, useEffect } from "react";
+import * as yup from 'yup';
+import schema from './validation/instructorFormSchema';
 
 
 const initialFormValues = {
@@ -55,6 +57,22 @@ function App() {
         setFormValues(initialFormValues);
       })
   }
+
+    const validate = (name, value) => {
+      yup.reach(schema, name)
+      .validate(value)
+      .then(() => setFormErrors({...formErrors, [name]: ''}))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
+    }
+
+    const inputChange = (name, value) => {
+      validate(name, value);
+      setFormValues({
+        ...formValues,
+        [name]: value
+      })
+    }
+
 
   const formSubmit = () => {
     const newClass = {
