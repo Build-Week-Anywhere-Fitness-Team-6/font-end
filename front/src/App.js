@@ -56,6 +56,21 @@ function App() {
       })
   }
 
+  const formSubmit = () => {
+    const newClass = {
+      name: formValues.name.trim(),
+      type: formValues.type.trim(),
+      time: formValues.time.trim(),
+      day: formValues.day.trim(),
+      duration: formValues.duration.trim(),
+      intensity: formValues.intensity.trim(),
+      location: formValues.location.trim(),
+      max_capacity: formValues.max_capacity.trim(),
+      punch_pass: formValues.punch_pass,
+    }
+    postNewClass(newClass);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -68,7 +83,13 @@ function App() {
       <Switch>
 
       <Route path="/dashboard-instructor/form">
-        <InstructorForm />
+        <InstructorForm 
+          values={formValues}
+          change={inputChange}
+          submit={formSubmit}
+          disabled={disabled}
+          errors={formErrors}
+        />
       </Route>
 
         <Route path="/dashboard-client">
