@@ -55,6 +55,25 @@ function ClientPage({ name, type, time, day, duration, intensity, location, max_
     classMaxCapacity.classList.add('text-blue-700');
     signUpBtn.textContent = 'Sign Up';
     signUpBtn.classList.add('text-blue-700');
+
+    //Appending Elements and creating hierarchy
+    classCard.appendChild(className);
+    classCard.appendChild(classInfoContainer);
+    classCard.appendChild(classInfoContainer2);
+    classCard.appendChild(signUpBtn);
+    classInfoContainer.appendChild(classInfo1);
+    classInfoContainer.appendChild(classInfo2);
+    classInfo1.appendChild(classType);
+    classInfo1.appendChild(classIntensity);
+    classInfo2.appendChild(classDate);
+    classInfo2.appendChild(classDuration);
+    classInfoContainer2.appendChild(classInfo3);
+    classInfoContainer2.appendChild(classInfo4);
+    classInfo3.appendChild(classLocation);
+    classInfo3.appendChild(classLocation1);
+    classInfo4.appendChild(classCapacity);
+    classInfo4.appendChild(classMaxCapacity);
+
     {/* <div>
         <h1>{name}</h1>
         <div classInfoContainer> Flex
@@ -80,7 +99,7 @@ function ClientPage({ name, type, time, day, duration, intensity, location, max_
         <button>Sign Up</button>
     </div> */}
 
-    //Appending Elements and creating hierarchy
+
     
     
     
