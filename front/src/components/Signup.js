@@ -1,38 +1,38 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import axiosWithAuth from '../tools/axiosWithAuth.js';
 
 function Signup() {
     const [newUser, setNewUser] = useState({
-        name: '',
         username: '',
         password: '',
-        instructor: false,
-        client: false
+        role: ''
     })
+    const [error, setError] = useState('');
+    const {push} = useHistory();
 
     const handleChange = (event) => {
+        const { checked, value, name, type } = event.target;
+        const valueToUse = (type === 'checkbox') ? checked:value;
+
         setNewUser({
             ...newUser,
-            [event.target.name]: event.target.value
+            [name]: valueToUse
         })
     }
 
     const submitNewUser = (event) => {
         event.preventDefault();
 
-
+        console.log(newUser);
+        if(newUser.role==='instructor'){push('/dashboard-instructor');}
+        else {push('/dashboard-client');}
     }
 
     return (
         <div className='bg-gym bg-cover bg-opacity-10 h-screen flex flex-col justify-center'>
-          <form className='flex flex-col h-3/5 w-2/5 justify-around align-center self-center bg-gray-50 bg-opacity-60'
+          <form className='flex flex-col h-1/2 w-2/5 justify-around align-center self-center bg-gray-50 bg-opacity-60 text-lg'
                 onSubmit={submitNewUser}>
-            <label>Name:
-              <input type='text' 
-                     placeholder=' full name'
-                     name='name'
-                     value={newUser.name}
-                     onChange={handleChange} />
-            </label>
 
             <label>Username:
               <input type='text'
@@ -53,15 +53,17 @@ function Signup() {
             <div className='flex justify-evenly'>
               <label>Instructor:
                 <input type='radio'
-                       name='instructor'
-                       value={newUser.instructor}
+                       name='role'
+                       value='instructor'
+                       checked={newUser.role==='instructor'}
                        onChange={handleChange}/>
               </label>
 
               <label>Client:
                 <input type='radio'
-                       name='client'
-                       value={newUser.client}
+                       name='role'
+                       value='client'
+                       checked={newUser.role==='client'}
                        onChange={handleChange}/>
               </label>
             </div>
