@@ -29,8 +29,8 @@ const formSchema = yup.object().shape({
     max_capacity: yup
         .string()
         .trim()
-        .required('Class Size Limit must be at least 1 character')
-        .min(1, 'Class Size Limit must be at least 1 character'),
+        .required('Class Size Limit must be at least 1')
+        .min(1, 'Class Size Limit must be at least 1'),
     punch_pass: yup.boolean(),
 
 })

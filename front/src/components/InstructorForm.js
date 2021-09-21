@@ -9,6 +9,11 @@ function InstructorForm(props) {
         errors,
     } = props
 
+    const onSubmit = evt => {
+        evt.preventDefault()
+        submit()
+    }
+
     const onChange = evt => {
         const { name, value, checked, type } = evt.target
         const valueToUse = type === 'checkbox' ? checked : value;
@@ -17,11 +22,21 @@ function InstructorForm(props) {
 
 
     return (
-        <div className="formContainer">
+        <form className="bg-indigo-500	text-white p-1 max-w-7xl " onSubmit={onSubmit}>
             <div>
                 <h2>Create a New Class</h2>
-                <label>Class Name
-                    <input 
+                <div className='errors'>
+                    <div>{errors.name}</div>
+                    <div>{errors.type}</div>
+                    <div>{errors.time}</div>
+                    <div>{errors.day}</div>
+                    <div>{errors.duration}</div>
+                    <div>{errors.intensity}</div>
+                    <div>{errors.location}</div>
+                    <div>{errors.max_capacity}</div>
+                </div>
+                <label >Class Name:
+                    <input className= "bg-indigo-500 text-white p-1"
                     value={values.name}
                     onChange={onChange}
                     name='name'
@@ -30,8 +45,8 @@ function InstructorForm(props) {
                 </label> 
             </div>
             <div>
-                <label> Class Type
-                    <select 
+                <label> Class Type:
+                    <select className= "bg-indigo-500 text-white p-1"
                         value={values.type}
                         onChange={onChange}
                         name='type'
@@ -45,9 +60,25 @@ function InstructorForm(props) {
                 </label>
             </div>
             <div>
+                {/* Dropdown */}
+                <label>Intensity:
+                    <select className= "bg-indigo-500 text-white p-1"
+                        value={values.intensity}
+                        onChange={onChange}
+                        name='intensity'
+                    >
+                    <option value=''>- Select an Intensity -</option>
+                    <option value='beginner'>Beginner</option>
+                    <option value='intermediate'>Intermediate</option>
+                    <option value='advanced'>Advanced</option> 
+                    </select>     
+                </label>
+           </div>
+            <div>
+                <h3>Schedule a Time and Day</h3>
                  {/* Dropdown */}
-                <label> Day 
-                    <select 
+                <label> Day :
+                    <select className= "bg-indigo-500 text-white p-1"
                         value={values.day}
                         onChange={onChange}
                         name='day'
@@ -63,8 +94,8 @@ function InstructorForm(props) {
                 </label>
             </div>
            <div>
-                <label> Start Time
-                    <input 
+                <label> Start Time:
+                    <input className= "bg-indigo-500 text-white p-1"
                         value={values.time}
                         onChange={onChange}
                         name='time'
@@ -74,8 +105,8 @@ function InstructorForm(props) {
            </div>
             <div>
                  {/* DropDown */}
-                <label>Class Duration
-                    <select 
+                <label>Class Duration:
+                    <select className= "bg-indigo-500 text-white p-1"
                         value={values.duration}
                         onChange={onChange}
                         name='duration'
@@ -87,24 +118,10 @@ function InstructorForm(props) {
                     </select>      
                 </label>
             </div>
+           
            <div>
-                {/* Dropdown */}
-                <label>Intensity
-                    <select 
-                        value={values.intensity}
-                        onChange={onChange}
-                        name='intensity'
-                    >
-                    <option value=''>- Select an Intensity -</option>
-                    <option value='beginner'>Beginner</option>
-                    <option value='intermediate'>Intermediate</option>
-                    <option value='advanced'>Advanced</option> 
-                    </select>     
-                </label>
-           </div>
-           <div>
-            <label> Class Location
-                    <select 
+            <label> Class Location:
+                    <select className= "bg-indigo-500 text-white p-1"
                         value={values.location}
                         onChange={onChange}
                         name='location'
@@ -119,19 +136,19 @@ function InstructorForm(props) {
            </div>
             <div>
                 {/* Enter Text */}
-                <label> Class Size Limit
-                    <input 
+                <label> Class Size Limit:
+                    <input className= "bg-indigo-500 text-white p-1"
                         value={values.max_capacity}
                         onChange={onChange}
                         name='max_capacity'
-                        type='text'
+                        type='number'
                     />
                 </label>
             </div>
             <div>
                  {/* Checkbox */}
                 <label> Enable Punch Pass?
-                    <input
+                    <input className= "bg-indigo-500 text-white p-1"
                         type="checkbox"
                         name="punch_pass"
                         onChange={onChange}
@@ -139,7 +156,8 @@ function InstructorForm(props) {
                     />
                 </label>
             </div>
-        </div>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" disabled={disabled}>Create Class</button>
+        </form>
     );
 }
 
