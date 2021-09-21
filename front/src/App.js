@@ -47,7 +47,7 @@ function App() {
   const [disabled, setDisabled] = useState(initialDisabled)
 
   const postNewClass = newClass => {
-    axios.post('https://reqres.in/api/orders', newClass)
+    axios.post('https://fitness-bw.herokuapp.com/api/classes/', newClass)
       .then(res => {
         console.log(res);
         setClasses([res.data, ...classes])

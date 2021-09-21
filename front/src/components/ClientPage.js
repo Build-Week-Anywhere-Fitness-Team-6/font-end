@@ -23,9 +23,38 @@ function ClientPage({ name, type, time, day, duration, intensity, location, max_
     const classLocation1= document.createElement('p');
     const classInfo4 = document.createElement('div');
     const classCapacity = document.createElement('p');
-    const classMassCapacity = document.createElement('p');
+    const classMaxCapacity = document.createElement('p');
     const signUpBtn = document.createElement('button');
 
+
+    //Setting Class Names, attribute, and Text
+    classCard.classList.add('text-blue-700');
+    className.textContent = `${name}`;
+    className.classList.add('text-blue-700');
+    classInfoContainer.classList.add('text-blue-700');
+    classInfo1.classList.add('text-blue-700');
+    classType.textContent = 'Class Type: ';
+    classType.classList.add('text-blue-700');
+    classIntensity.textContent = `${intensity} ${type}`;
+    classIntensity.classList.add('text-blue-700');
+    classInfo2.classList.add('text-blue-700');
+    classDate.textContent = `${day} ${time}`;
+    classDate.classList.add('text-blue-700');
+    classDuration.textContent = `Duration: ${duration}`;
+    classDuration.classList.add('text-blue-700');
+    classInfoContainer2.classList.add('text-blue-700');
+    classInfo3.classList.add('text-blue-700');
+    classLocation.textContent = 'Location: '
+    classLocation.classList.add('text-blue-700');
+    classLocation1.textContent = `${location}`
+    classLocation1.classList.add('text-blue-700');
+    classInfo4.classList.add('text-blue-700');
+    classCapacity.textContent = 'Class Size: ';
+    classCapacity.classList.add('text-blue-700');
+    classMaxCapacity.textContent = `${max_capacity}`
+    classMaxCapacity.classList.add('text-blue-700');
+    signUpBtn.textContent = 'Sign Up';
+    signUpBtn.classList.add('text-blue-700');
     {/* <div>
         <h1>{name}</h1>
         <div classInfoContainer> Flex
@@ -50,8 +79,6 @@ function ClientPage({ name, type, time, day, duration, intensity, location, max_
         </div>
         <button>Sign Up</button>
     </div> */}
-
-    //Setting Class Names, attribute, and Text
 
     //Appending Elements and creating hierarchy
     
