@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Route, Switch } from 'react-router-dom'
 
 
 export default function Class(props) {
@@ -32,8 +33,15 @@ export default function Class(props) {
                 </div>
             </div>
             <div>
-               <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Edit Class</button>
-            <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Delete Class</button> 
+                {/* Linking to an Edit class page? Not sure what to do here */}
+                <Link to='/dashboard-instructor/form/edit'>
+                    <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Edit Class</button>
+                </Link>
+
+                <Link to=' https://fitness-bw.herokuapp.com/api/classes/:class_id'>
+               <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Delete Class</button> 
+                </Link>
+            
             </div>
             
         </div> 

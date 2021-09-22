@@ -1,5 +1,6 @@
 import React from 'react';
 import InstructorClassList from "./InstructorClassList"
+import { Link, Route, Switch } from 'react-router-dom'
 
 const dummyData = [
     {
@@ -41,6 +42,8 @@ function InstructorPage() {
                 })
                 
             }
+            <Link className="bg-blue-500 hover:bg-blue-700 text-white font-bold block w-1/3 m-auto my-4 py-2 px-4 rounded-full" 
+            to="/dashboard-instructor/form">Add a New Class</Link>
             
         </div>
     )
