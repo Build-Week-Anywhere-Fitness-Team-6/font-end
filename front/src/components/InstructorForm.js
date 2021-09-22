@@ -24,16 +24,16 @@ function InstructorForm(props) {
     return (
         <form className="bg-indigo-500	text-white p-1 max-w-7xl " onSubmit={onSubmit}>
             <div>
-                <h2>Create a New Class</h2>
+                <h2 className="font-bold text-xl p-3 text-white">Create a New Class</h2>
                 <div className='errors'>
-                    <div>{errors.name}</div>
-                    <div>{errors.type}</div>
-                    <div>{errors.time}</div>
-                    <div>{errors.day}</div>
-                    <div>{errors.duration}</div>
-                    <div>{errors.intensity}</div>
-                    <div>{errors.location}</div>
-                    <div>{errors.max_capacity}</div>
+                    <div className="text-red-400">{errors.name}</div>
+                    <div className="text-red-400">{errors.type}</div>
+                    <div className="text-red-400">{errors.time}</div>
+                    <div className="text-red-400">{errors.day}</div>
+                    <div className="text-red-400">{errors.duration}</div>
+                    <div className="text-red-400">{errors.intensity}</div>
+                    <div className="text-red-400">{errors.location}</div>
+                    <div className="text-red-400">{errors.max_capacity}</div>
                 </div>
                 <label >Class Name:
                     <input className= "bg-indigo-500 text-white p-1"
@@ -76,7 +76,7 @@ function InstructorForm(props) {
                 </label>
            </div>
             <div>
-                <h3>Schedule a Time and Day</h3>
+                <h3 className="p-2 font-bold">Schedule a Time and Day</h3>
                  {/* Dropdown */}
                 <label> Day :
                     <select className= "bg-indigo-500 text-white p-1"
@@ -146,8 +146,8 @@ function InstructorForm(props) {
             </div>
             <div>
                  {/* Checkbox */}
-                <label> Enable Punch Pass?
-                    <input className= "bg-indigo-500 text-white p-1"
+                <label className="p-2"> Enable Punch Pass?
+                    <input className= "bg-indigo-500 text-white p-2"
                         type="checkbox"
                         name="punch_pass"
                         onChange={onChange}
@@ -155,7 +155,7 @@ function InstructorForm(props) {
                     />
                 </label>
             </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" disabled={disabled}>Create Class</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-8 py-2 px-4 rounded-full" disabled={disabled}>Create Class</button>
         </form>
     );
 }
