@@ -41,6 +41,7 @@ function InstructorForm(props) {
                     onChange={onChange}
                     name='name'
                     type='text'
+                    placeholder="--- Class Name ---"
                     />
                 </label> 
             </div>
@@ -100,6 +101,7 @@ function InstructorForm(props) {
                         onChange={onChange}
                         name='time'
                         type='text'
+                        placeholder="--- ex. 12:30 am ---"
                     />
                 </label>
            </div>
@@ -121,17 +123,13 @@ function InstructorForm(props) {
            
            <div>
             <label> Class Location:
-                    <select className= "bg-indigo-500 text-white p-1"
-                        value={values.location}
-                        onChange={onChange}
-                        name='location'
-                    >
-                    <option value=''>- Select a room -</option>
-                    <option value='gym-1'>Gym 1</option>
-                    <option value='gym-2'>Gym 2</option>
-                    <option value='studio-1'>Studio 1</option>
-                    <option value='studio-2'>Studio 2</option> 
-                    </select>    
+                    <input className= "bg-indigo-500 text-white p-1"
+                    value={values.location}
+                    onChange={onChange}
+                    name='location'
+                    type='text'
+                    placeholder="-- Enter Class Location --"
+                    />  
                 </label>
            </div>
             <div>
@@ -142,6 +140,7 @@ function InstructorForm(props) {
                         onChange={onChange}
                         name='max_capacity'
                         type='number'
+                        placeholder="--- Number of Students ---"
                     />
                 </label>
             </div>
