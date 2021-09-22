@@ -25,7 +25,9 @@ const formSchema = yup.object().shape({
         .oneOf(['beginner', 'intermediate', 'advanced'], 'Class Intensity is required!'),
     location: yup
         .string()
-        .oneOf(['gym-1', 'gym-2', 'studio-1', 'studio-2'], 'Class Location is required!'),
+        .trim()
+        .required('Class Location is required!')
+        .min(5, 'Location must be at least 5 characters'),
     max_capacity: yup
         .string()
         .trim()
