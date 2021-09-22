@@ -31,10 +31,12 @@ export default function Class(props) {
                     <p className= "text-gray-50" > {details.max_capacity}</p>
                 </div>
             </div>
-            <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Sign Up</button>
+            <button onClick='' className="border-4 p-1.5 text-gray-50 font-bold mb-5">Sign Up</button>
         </div> 
     )
 }
+
+
 
 
 
