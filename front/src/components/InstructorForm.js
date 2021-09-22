@@ -52,11 +52,11 @@ function InstructorForm(props) {
                         onChange={onChange}
                         name='type'
                     >
-                    <option value=''>- Select a Class Type -</option>
-                    <option value='yoga'>Yoga</option>
-                    <option value='spin'>Spin</option>    
-                    <option value='pilates'>Pilates</option>
-                    <option value='kickboxing'>KickBoxing</option> 
+                        <option value=''>- Select a Class Type -</option>
+                        <option value='yoga'>Yoga</option>
+                        <option value='spin'>Spin</option>    
+                        <option value='pilates'>Pilates</option>
+                        <option value='kickboxing'>KickBoxing</option> 
                     </select>   
                 </label>
             </div>
