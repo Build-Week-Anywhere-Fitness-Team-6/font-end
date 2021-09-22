@@ -9,7 +9,6 @@ const schema = yup.object().shape({
   username: yup.string().required('name is required').min(2),
   password: yup.string().required('name is required').min(5),
   role: yup.string().oneOf(['instructor','client']),
- 
 })
 
 
