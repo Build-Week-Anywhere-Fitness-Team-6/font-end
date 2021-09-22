@@ -59,7 +59,7 @@ function Signup() {
                              else {push('/dashboard-client');}
                             })
                        .catch(err => {
-                              console.log('uh-oh, you were not able to register', err.data.message) 
+                              console.log('uh-oh, you were not able to register', err.response.data['message']) 
                              })
         
     }
