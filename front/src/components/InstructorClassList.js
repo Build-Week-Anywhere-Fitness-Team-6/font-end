@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link,} from 'react-router-dom'
 
 
 export default function Class(props) {
@@ -32,7 +33,9 @@ export default function Class(props) {
                 </div>
             </div>
             <div>
+                <Link to="/dashboard-instructor/form/edit">
                <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Edit Class</button>
+               </Link>
             <button className="border-4 p-1.5 text-gray-50 font-bold mb-5">Delete Class</button> 
             </div>
             
