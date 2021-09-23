@@ -55,6 +55,7 @@ function App() {
         setClasses([res.data, ...classes])
         setFormValues(initialFormValues);
       }).catch(err => {
+        console.log(err.response.data['message']);
         console.error(err);
         setFormValues(initialFormValues);
       })

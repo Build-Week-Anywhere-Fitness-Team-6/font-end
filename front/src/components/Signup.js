@@ -59,6 +59,7 @@ function Signup() {
                              else {push('/login');}
                             })
                        .catch(err => {
+                        console.log(err.response.data['message']);
                               console.log('uh-oh, you were not able to register', err.response.data['message']) 
                              })
         
