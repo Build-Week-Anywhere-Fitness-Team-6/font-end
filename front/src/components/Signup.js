@@ -53,10 +53,10 @@ function Signup() {
 
         //imported axiosWithAuth posts to '/register' and then routes new user to correct page based on role
         axiosWithAuth().post('/register', newUser)
-                       .then(res => {return 
+                       .then(res => { 
                              console.log(res);
-                             if(newUser.authcode==='instructorsPass'){push('/dashboard-instructor');}
-                             else {push('/dashboard-client');}
+                             if(newUser.authcode==='instructorsPass'){push('/login');}
+                             else {push('/login');}
                             })
                        .catch(err => {
                               console.log('uh-oh, you were not able to register', err.response.data['message']) 

@@ -11,6 +11,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from "react";
 import * as yup from 'yup';
 import schema from './validation/instructorFormSchema';
+import axiosWithAuth from './tools/axiosWithAuth';
 
 
 const initialFormValues = {
@@ -47,7 +48,8 @@ function App() {
   const [disabled, setDisabled] = useState(initialDisabled)
 
   const postNewClass = newClass => {
-    axios.post('https://fitness-bw.herokuapp.com/api/classes/', newClass)
+    axiosWithAuth()
+    .post('https://fitness-bw.herokuapp.com/api/classes/', newClass)
       .then(res => {
         console.log(res);
         setClasses([res.data, ...classes])

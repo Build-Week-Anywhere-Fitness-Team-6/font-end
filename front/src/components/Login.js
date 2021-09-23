@@ -4,8 +4,9 @@ import axios from "axios";
 
 function Login(props) {
   const [user, setUser] = useState({
-    username: "",
+    user_name: "",
     password: "",
+    authcode: ""
   });
   const [error, setError] = useState("");
   const history = useHistory()
@@ -18,16 +19,19 @@ function Login(props) {
   };
 
   const handleSubmit = (e) => {
+   console.log(user)
     e.preventDefault();
     axios
-      .post("url", user)
+      .post("https://fitness-bw.herokuapp.com/api/auth/login", user)
       .then((res) => {
-        localStorage.setItem("token", res.data);
-        if (res.data.payload === "instructor") {
-          history.push("/dashboard-instructor");
-        } else {
-          history.push("/dashboard-client");
-        }
+        console.log(res)
+        localStorage.setItem("token", res.data.token)
+       if(res.data.role === "Client"){
+         history.push("/dashboard-client")
+       } else{
+        history.push("/dashboard-instructor")
+       }
+        
       })
       .catch(err=>{
           console.log(err)
@@ -45,10 +49,10 @@ function Login(props) {
         >
             <div className=" flex flex-col items-center gap-3">
             <input className="shadow appearance-none border roundedpy-2 px-3 text-gray-700 leading-tight focus:outline-none text-center focus:shadow-outline block"
-                name="username"
+                name="user_name"
                 type="text"
                 id="username"
-                value={user.username}
+                value={user.user_name}
                 onChange={handleChange}
                 placeholder="--- username ---"
             />
