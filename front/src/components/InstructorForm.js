@@ -22,7 +22,7 @@ function InstructorForm(props) {
 
 
     return (
-        <form className="bg-indigo-500	text-white p-1 max-w-7xl " onSubmit={onSubmit}>
+        <form className="bg-indigo-500	text-white p-1 max-w-7xl m-auto " onSubmit={onSubmit}>
             <div>
                 <h2 className="font-bold text-xl p-3 text-white">Create a New Class</h2>
                 <div className='errors'>
